@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Web Design Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+    html { overflow-x: hidden; overflow-y: scroll; }
+    body { overflow: hidden; width: 100%; margin: 0; padding: 0; }
+
+    
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('images/hero_image.jpg') center/cover fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: inherit;
+      z-index: -1;
+    }
+
+    
+    .hero-overlay {
+      background: #000; 
+      color: #fff;
+      padding: 50px;
+      border-radius: 12px;
+      max-width: 820px;
+      margin: 20px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+
+    .intro-text {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-top: 18px;
+    }
+
+    
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #007bff;
+      z-index: 1000;
+      padding: 16px 20px;
+    }
+    nav ul { display: flex; justify-content: space-evenly; list-style: none; margin: 0; }
+    nav a {
+      color: white; font-weight: bold; font-size: 22px;
+      padding: 8px 16px; border-radius: 6px;
+      transition: background .3s;
+    }
+    nav a:hover, nav a.active { background: rgba(255,255,255,.2); }
+
+    
+    .section-bg {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+      color: #fff;
+    }
+    .section-bg h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      color: #007bff;
+      margin-bottom: .5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #111;
+      color: white;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <nav>
+    <ul>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="principles.html">Principles</a></li>
+      <li><a href="color.html">Color</a></li>
+      <li><a href="typography.html">Typography</a></li>
+    </ul>
+  </nav>
+
+  
+<header class="hero">
+    <div class="hero-overlay">
+      <h1>Welcome!</h1>
+      <p class="intro-text">
+        This website was created by Andrew Krueger as a student project for ARTD 245: Web Design at North Central College in Naperville, IL, in 2025. All the text comes from the following articles located on the Dribbble website. All the images were created by me using Photoshop. The website has been created using HTML and CSS in Dreamweaver.
+      </p>
+    </div>
+  </header>
+
+  
+<section class="section-bg">
+  <h2>About Me</h2>
+  <div class="yellow-line"></div>
+  <p>My name is Andrew Krueger. I’m a design major at North Central College with a passion for graphic design and marketing. I enjoy creating digital art, posters, and animation projects that help ideas come to life through visual storytelling.</p>
+
+  <h2>Website Purpose</h2>
+  <div class="yellow-line"></div>
+  <p>This website shows how different design principles work together to make a great looking and functional website. It was built using HTML and CSS in Dreamweaver to demonstrate layout, color, and typography in a practical way.</p>
+
+  <h2>Sources and Inspiration</h2>
+  <div class="yellow-line"></div>
+  <p>This project was created using information from the following:</p>
+  <ul class="sources-list">
+    <li>
+      <a href="https://www.flux-academy.com/blog/the-ultimate-guide-to-choosing-fonts" target="_blank">
+        <span class="highlight">The Ultimate Guide to Choosing Fonts</span>
+      </a> by <em>Monica Galvan</em> — Flux Academy
+    </li>
+    <li>
+      <a href="https://www.flux-academy.com/blog/ultimate-guide-to-choosing-colors-for-web-design" target="_blank">
+        <span class="highlight">Ultimate Guide To Choosing Colors for Web Design</span>
+      </a> by <em>Stephanie Corrigan</em> — Flux Academy
+    </li>
+    <li>
+      <a href="https://dribbble.com/resources/principles-of-design" target="_blank">
+        <span class="highlight">11 Principles of Design</span>
+      </a> by <em>Renee Fleck</em> — Dribbble
+    </li>
+  </ul>
+</section>
+
+
+  <footer>
+    <h3>Credits</h3>
+    <p>Copyright © 2025 Andrew Krueger</p>
+  </footer>
+<a href="#top" class="back-to-top">Back to Top</a>
+</body>
+</html>

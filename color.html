@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Guide To Choosing Colors for Web Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+   nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background-color: #007bff;
+      z-index: 1000;
+      padding: 16px 20px;
+    }
+    nav ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    nav a:hover, nav a.active {
+      background-color: rgba(255,255,255,0.2);
+    }
+   
+    header#intro {
+      min-height: 100vh;
+      background: url('images/color-hero.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0px 20px 20px; 
+      position: relative;
+    }
+    
+    header#intro > * {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #FFF700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+    .intro-text {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto 16px;
+    }
+    .author {
+      font-style: italic;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+   
+    .section-bg {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+      text-align: left;
+    }
+    .section-bg h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #007bff;
+      text-align: center;
+      margin: 40px 0 30px;
+    }
+    .section-bg h3 {
+      font-size: 24px;
+      color: #FFF700;
+      margin: 30px 0 16px;
+    }
+    .section-bg p, .section-bg ul {
+      margin-bottom: 20px;
+    }
+    .section-bg ul {
+      padding-left: 24px;
+    }
+   
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      margin: 30px 0;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+   
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .gallery a {
+      display: block;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .gallery a:hover {
+      transform: translateY(-4px);
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .gallery a:hover img {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    }
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 50px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .lightbox .close:hover {
+      color: #00E9FF;
+    }
+   
+    .color-meanings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 50px 0;
+    }
+    .color-card {
+      background: #111;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .color-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+    }
+    .color-swatch {
+      height: 120px;
+      background: var(--swatch);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .color-info {
+      padding: 20px;
+    }
+    .color-info h4 {
+      font-size: 22px;
+      color: #FFF700;
+      margin-bottom: 8px;
+    }
+    .color-info p {
+      font-size: 15px;
+      color: #ddd;
+      margin: 6px 0;
+    }
+   
+    .button {
+      display: inline-block;
+      background: linear-gradient(to right, #007bff, #00bfff);
+      color: white;
+      padding: 14px 28px;
+      margin: 10px 8px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s;
+    }
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+   
+    }
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #111;
+      color: #aaa;
+      margin-top: 80px;
+      font-size: 15px;
+    }
+    footer h3 {
+      color: #FFF700;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      nav a { font-size: 18px; }
+      .section-bg { padding: 0 15px; }
+    }
+  </style>
+</head>
+<body id="color-page">
+<nav>
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="principles.html">Principles</a></li>
+    <li><a href="color.html" class="active">Color</a></li>
+    <li><a href="typography.html">Typography</a></li>
+  </ul>
+</nav>
+
+<header id="intro" style=>
+  <h1>Ultimate Guide To Choosing Colors for Web Design</h1>
+  <p class="intro-text">
+    Choosing colors is an important part of the web design process that can make or break the final result.
+    In this guide, we'll review color theory and psychology fundamentals and lay out a step-by-step process
+    for creating color palettes for websites.
+  </p>
+  <p class="author">By Stephanie Corrigan</p>
+</header>
+<img src="images/website photo 15.jpg" alt="Color wheel and design example" width="747" height="537"
+     style="margin-top: -180px; display: block; margin-left: auto; margin-right: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); z-index: 3; position: relative;"/>
+
+
+<section class="section-bg">
+  <p>If you're a web designer who struggles to create color schemes for websites, you're not alone. Choosing colors may seem intuitive, but in fact there's a lot of strategy that goes into creating effective color palettes. Everyone has subjective opinions on different colors--some people love bold, bright colors like cherry red and neon green, whereas others gravitate towards soft pastels. The challenge for web designers is to look past their subjective views, and those of their clients, in order to choose colors strategically.</p>
+  <p>Fortunately, there are certain principles and methods that help make color choice a breeze for web designers. In this guide, we'll teach you how to take the guesswork out of choosing colors for your web design projects. First, we'll review the fundamental color theory and psychology principles every designer needs to know. Then, we'll spell out a simple 3-step process that’ll help you choose colors for websites like a pro.</p>
+  <p>Check out Ran Segall's video below for a 12-minute introduction to using colors in web design.</p>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/UuPt4RpV4Xc" title="Color in Web Design by Ran Segall" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</section>
+
+
+<section class="section-bg">
+  <h2>Why choosing the right colors is important</h2>
+  <p>You may be wondering: is color choice really that important for a website? The answer is a resounding yes. Good color choice promotes legibility, visual appeal, and brand recognition. Bad color choice, on the other hand, creates a poor user experience. As we all know, a poor user experience spells disaster for a business website.</p>
+  <h3>Legibility</h3>
+  <p>Color choice helps determine whether the content on a page is readable. Legibility is optimized with an appropriate level of color contrast between the text and the background. Too little contrast makes the text hard to read; too much contrast is hard on the eyes. A classic example of color contrast is black text on a white background. If you look closely, you'll notice that many websites actually use dark grey text on a white or off-white background in order to maximize legibility while minimizing eye strain.</p>
+  <figure><img src="images/website photo 16.jpg" alt="" width="692" height="497"/></figure>
+  <h3>Visual appeal</h3>
+  <p>When referring to visual appeal in web design, we're not talking about subjective color opinions. Instead, the emphasis is on creating harmonious color palettes that are easy on the eyes. Choosing colors that have broad visual appeal requires an understanding of color theory. As we'll discuss in more detail later on, there are three types of color schemes that have universal appeal: monochromatic, complementary, and analogous. Recognizing and knowing how to create these color schemes makes choosing colors for websites easier and more effective.</p>
+  <figure><img src="images/website photo 17.jpg" alt="" width="692" height="497"/></figure>
+  <h3>Brand recognition</h3>
+  <p>Another important role of colors in a web design context is brand recognition. Many brands have a primary color (or two) that has a strong presence across their website, marketing materials, and other brand assets. Some classic examples that come to mind are Coca-Cola's red, the Starbucks green, and Ikea's high-contrast blue and yellow. Consistency is key for creating brand recognition through color. Later on, we'll see how color psychology comes into play when choosing primary brand colors.</p>
+  <figure><img src="images/website photo 18.jpg" alt="" width="692" height="497"/></figure>
+</section>
+<section class="section-bg">
+  <h2>Using color theory to choose colors</h2>
+  <p>Color theory is a practical framework for determining which colors work well together. The principles of color theory revolve around the color wheel, which visually portrays the relationships between different colors. The color wheel contains primary, secondary, and tertiary colors. It can also be divided into warm and cool colors. Familiarizing yourself with the color wheel is the first step to learning how to choose harmonious colors.</p>
+  <figure></figure>
+  <h3>Color schemes</h3>
+  <p>A color scheme is a harmonious combination of colors. The three main types of color schemes designers should know about are monochromatic, complementary, and analogous. You could think of these schemes as sort of like templates for choosing colors. Let's look at each one in more detail.</p>
+  <h3>Monochromatic</h3>
+  <p>Monochromatic color schemes are based on a single hue ("mono" means one). Hues are primary and secondary colors, like red, yellow, and green. To create a monochromatic color scheme, you'd pick a hue, for instance blue, and use tints, shades, and tones to create a harmonious palette. Monochromatic colors tick the box for visual appeal, but be careful to create enough contrast for legibility.</p>
+  <figure><img src="images/website photo 19.jpg" alt="" width="692" height="497"/></figure>
+  <h3>Complementary</h3>
+  <p>Complementary color schemes consist of colors on opposite ends of the color wheel. For example, red and green or blue and orange. Complementary colors tend to contrast well and are therefore a popular choice for web design. However, the contrast can be striking and should therefore be used intentionally in order to ensure that the colors aren't too distracting.</p>
+  <figure><img src="images/website photo 20.jpg" alt="" width="692" height="497"/></figure>
+  <h3>Analogous</h3>
+  <p>Analogous color schemes are made of colors that sit next to each other on the color wheel. These color schemes are inherently visually appealing, but as with monochromatic color schemes, be careful to create enough contrast for legibility. A tip for using an analogous color scheme on a website is to pair it with a neutral color like black or white in order to improve readability.</p>
+  <figure><img src="images/website photo 21.jpg" alt="" width="692" height="497"/></figure>
+  <p><a href="https://www.flux-academy.com/blog/what-is-color-theory" target="_blank">Click here</a> for an in-depth guide on color theory.</p>
+  <p>Once you have a good handle on color theory, creating harmonious color palettes becomes more intuitive. But which scheme is best for a given project, and how do you decide which sections of the color wheel to use? This is where color psychology comes into play.</p>
+ 
+  <div class="gallery"></div>
+  <a href="#" class="lightbox" id="img1"><span class="close">×</span><img src="images/anik-deb-monochromatic.png" alt="Monochromatic blue scheme"></a>
+  <a href="#" class="lightbox" id="img2"><span class="close">×</span><img src="images/alisa-maiboroda-complementary.png" alt="Complementary blue & orange"></a>
+  <a href="#" class="lightbox" id="img3"><span class="close">×</span><img src="images/webinsane-analogous.png" alt="Analogous yellow & orange"></a>
+</section>
+<section class="section-bg">
+  <h2>Using color psychology to choose colors</h2>
+  <p>Whereas color theory is centered on creating harmonious color schemes, color psychology is concerned with the feelings and emotions different colors evoke. Feelings and emotions may sound wishy-washy in a business context, but they actually play a critical role in branding, marketing, and sales. In fact, emotions are at the core of a consumer's decision making process<a href="https://www.psychologytoday.com/us/blog/inside-the-consumer-mind/201302/how-emotions-influence-what-we-buy#:~:text=The%20emotional%20core%20of%20consumer%20decision%2Dmaking&text=Most%20people%20believe%20that%20the,cases%2C%20even%20determine%20our%20decisions.&text=These%20emotions%20create%20preferences%2C%20which%20lead%20to%20our%20decision." target="_blank">(source)</a>.</p>
+  <h3>Color meanings</h3>
+  <p>One way to incorporate color psychology when choosing colors for a website is through consideration of common color meanings. Different colors, both consciously and subconsciously, spark certain feelings. These feelings are largely influenced by cultural contexts, as well as personal experiences. Below are some examples of common color associations:</p>
+  <div class="color-meanings">
+    <div class="color-card" style="--swatch: #FF0000;">
+      <div class="color-swatch"></div>
+      <div class="color-info">
+        <h4>Red</h4>
+        <p>passion, power, love, danger, excitement</p>
+      </div>
+    </div>
+    <div class="color-card" style="--swatch: #007BFF;">
+      <div class="color-swatch"></div>
+      <div class="color-info">
+        <h4>Blue</h4>
+        <p>calm, trust, competence, peace, logic, reliability</p>
+      </div>
+    </div>
+    <div class="color-card" style="--swatch: #28A745;">
+      <div class="color-swatch"></div>
+      <div class="color-info">
+        <h4>Green</h4>
+        <p>health, nature, abundance, prosperity</p>
+      </div>
+    </div>
+    <div class="color-card" style="--swatch: #FFC107;">
+      <div class="color-swatch"></div>
+      <div class="color-info">
+        <h4>Yellow</h4>
+        <p>happiness, optimism, creativity, friendliness</p>
+      </div>
+    </div>
+    <div class="color-card" style="--swatch: #FD7E14;">
+      <div class="color-swatch"></div>
+      <div class="color-info">
+        <h4>Orange</h4>
+        <p>fun, freedom, warmth, comfort, playfulness</p>
+      </div>
+    </div>
+    <div class="color-card" style="--swatch: #6F42C1;">
+      <div class="color-swatch"></div>
+      <div class="color-info">
+        <h4>Purple</h4>
+        <p>luxury, mystery, sophistication, loyalty, creativity</p>
+      </div>
+    </div>
+    <div class="color-card" style="--swatch: #E83E8C;">
+      <div class="color-swatch"></div>
+      <div class="color-info">
+        <h4>Pink</h4>
+        <p>nurturing, gentleness, sincerity, warmth</p>
+      </div>
+    </div>
+    <div class="color-card" style="--swatch: #964B00;">
+      <div class="color-swatch"></div>
+      <div class="color-info">
+        <h4>Brown</h4>
+        <p>nature, security, protection, support</p>
+      </div>
+    </div>
+    <div class="color-card" style="--swatch: #212529;">
+      <div class="color-swatch"></div>
+      <div class="color-info">
+        <h4>Black</h4>
+        <p>elegance, power, control, sophistication, depression</p>
+      </div>
+    </div>
+    <div class="color-card" style="--swatch: #FFFFFF;">
+      <div class="color-swatch" style="color: #000;"></div>
+      <div class="color-info">
+        <h4>White</h4>
+        <p>purity, peace, clarity, cleanliness</p>
+      </div>
+    </div>
+  </div>
+  <p>Some color meanings appear contradictory. For instance, red often denotes danger, but it can also convey love and passion. Black can evoke feelings of power in some cases and depression in others. The key here is context.</p>
+  <p>Context is crucial to consider when choosing colors for a brand or website. Using the color red for a website won't automatically signal danger, just like it won't automatically signal romance. The other elements on the page, such as typography, imagery, and messaging, all work symbiotically to convey a certain look and feel.</p>
+ <div style="max-width: 747px; margin: 20px auto; text-align: center;">
+  <img src="images/color_poster_5.png" alt="Website with monochromatic red color scheme" width="91%" height="507" 
+       style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); display: block;" />
+  <figcaption style="color: #007bff; font-size: 16px; margin-top: 12px; text-align: center; max-width: 100%;">
+    <span style="color: #ccc">Example of a website with a monochromatic red color scheme.</span> <em style="color: #ccc">Source: Kateryna Kaida via Dribbble.</em>
+  </figcaption>
+</div>
+  <p>Color psychology can help inform which colors would best represent your client's brand. It makes sense to use green for a health-centered website because of the color's associations with health, nature, and abundance. However, in creative fields like design, rules are sometimes meant to be broken. Within the right context, an unexpected color scheme could work favorably for a brand. A health brand with a red color scheme would certainly stand out among its green competitors; the trick is to make it stand out in a good way, a skill that takes time and practice to master.</p>
+  <p><a href="https://www.flux-academy.com/blog/the-psychology-of-color-how-valuable-web-designers-choose-colors" target="_blank">Click here</a> for an in-depth guide on color psychology.</p>
+  <div style="text-align: center; margin: 40px 0;">
+    <a class="button" href="https://www.canva.com/colors/color-meanings/" target="_blank">Explore Color Meanings</a>
+    <a class="button" href="https://color.adobe.com/create/color-wheel" target="_blank">Adobe Color Wheel</a>
+  </div>
+</section>
+<section class="section-bg">
+  <h2 style="color: #007bff">How to create a color palette for a website</h2>
+  <p>Now that we've reviewed the fundamentals of color theory and psychology, we're ready to put what we've learned into practice in order to create strategic color palettes for websites. Aesthetics are certainly important in the web design world; but a pretty color palette that's thrown together without intention or strategy won't serve anyone.</p>
+  <p>Here's a simple, 3-step process for choosing colors for a website like a pro.</p>
+  <h3>1. Choose a primary color</h3>
+  <p>The best place to start when creating a color palette is with the primary color. A palette's primary color is the star of the show. If we follow the 60/30/10 rule, the primary color takes up about 60% of the color on a website.</p>
+  <p>When choosing a strong primary color, it's helpful to consider two things: color psychology and context. Reference the color meanings listed above to determine which color best conveys the emotions that users should feel when they land on the website. Should they feel calm or excited? Free or secure? Curious or protected? Don't forget to consider context; relying too heavily on common color associations can be detrimental out of context.</p>
+  <p>P.S. Check out <a href="https://www.flux-academy.com/blog/how-to-strategically-use-color-in-website-design" target="_blank">this post</a> to learn more about the 60/30/10 rule and other tips for choosing colors strategically.</p>
+  <figure></figure>
+  <h3>2. Choosing secondary colors</h3>
+  <p>Once you've chosen a primary color, select one or more secondary colors. According to the 60/30/10 rule, secondary colors take up about 30% of a website. In order to choose secondary colors, you'll need to first determine which type of color scheme is best for the website: monochromatic, complementary, or analogous.</p>
+  <p>Color psychology can play a role here as well. Soft, muted colors convey a totally different look and feel from bright, vivid colors. A monochromatic blue color scheme might appear calming and soothing; but a complementary blue and orange color scheme could look playful and exciting.</p>
+  <h3>3. Choose an accent color</h3>
+  <p>Last but not least, every color palette should include an accent color. This color is used sparingly, taking up about 10% of real estate on a website. Often, the accent color contrasts strongly against the primary color. This contrast helps the accent color stand out and draw attention to important elements on the page, for instance buttons.</p>
+  <p>The term "accent color" typically calls to mind vibrant colors like teal or orange. But note that black and white are considered colors as well and can be used effectively as accent colors, especially on more colorful websites.</p>
+  <figure></figure>
+  <h2 style="color: #007bff">Learn the art and strategy of high-value websites</h2>
+  <p>In this guide, we reviewed color theory and psychology fundamentals and laid out a 3-step process for creating strategic color palettes for websites. Once you've mastered the process of choosing colors, you're well on your way to creating high-value websites for clients. But what other skills are needed in order to improve your web design process so that you can provide more value to your clients, and in turn, charge more for your work?</p>
+  <p>Color is just one of several visual design principles every web designer should master. Other important principles include typography, layout, and UX. And in order to put these principles to work, it's essential to master the strategy behind web design. Conducting strategy sessions with your clients will help you uncover what problems they're facing and what goals they're trying to reach; the secret to high-value web design is setting measurable objectives upfront and solving real problems.</p>
+  <p>In sum, creating high-value websites is a combination of art and strategy. Our web design course, The $10k Website Process, teaches just that. This comprehensive course teaches Ran Segall's tried-and-true process for creating standout websites that create real results for clients. The course will give you the tools and confidence you need to book your dream clients and charge more for your work.<span style="color: #00F6FF"> <a href="https://www.flux-academy.com/courses/web-design-masterclass" target="_blank">Click here</a></span> to learn more about the course and join the waitlist.</p>
+  <div style="text-align: center; margin: 40px 0;">
+    <a class="button" href="https://www.flux-academy.com/courses/web-design-masterclass" target="_blank">Join The $10k Website Process</a>
+    <a class="button" href="typography.html">Typography</a>
+	<a class="button" href="principles.html">Principles</a>
+  </div>
+</section>
+<footer>
+  <h3>Credits</h3>
+  <p>Copyright &copy; Andrew Krueger, 2025</p>
+  <p>Original <a href="https://www.flux-academy.com/blog/ultimate-guide-to-choosing-colors-for-web-design" target="_blank">Article</a> by Stephanie Corrigan.</p>
+  <p>Original Photos made in Adobe Photoshop.</p>
+</footer>
+<a href="#top" class="back-to-top">Back to Top</a>
+</body>
+</html>
